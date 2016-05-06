@@ -1,4 +1,4 @@
-// Subcriptions
+// Subcriptions class
 var subId = DDP.sub('activities');
 DDP.on('ready', function (message) {
   debugger
