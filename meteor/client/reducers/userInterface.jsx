@@ -1,6 +1,3 @@
-let {selectActivity, activityChanged} = Actions;
-Reducers = {};
-
 let initialInterfaceState = {
 	selectedActivity: {},
 	statusMessage: '',
@@ -24,7 +21,7 @@ function merge(objectA, objectB) {
 // these reducers *must* be pure to use time-travel dev-tools
 // never directly mutate the `state` param, use merge instead
 
-Reducers.userInterface = function userInterface(state, action) {
+function userInterface(state, action) {
   state = state || initialInterfaceState;
 
   switch (action.type) {
@@ -38,29 +35,6 @@ Reducers.userInterface = function userInterface(state, action) {
     default:
       return state;
   }
-}
+};
 
-/*
-Reducers.activities
-Manages changes to the state.activities collection.
-The state.activities collection is stored as an object with _id keys, you can
-view the activities collection structure in the Redux Dev Tools sidebar.
-*/
-Reducers.activities = function(state = {}, action) {
-
-  switch(action.type) {
-    case 'ACTIVITY_ADDED':
-      return {...state, [action.activity._id]: action.activity};
-
-    case 'ACTIVITY_CHANGED':
-    	// Data has changed
-    	var oldActivity = state[action.activity._id]
-    	return {
-    		...state,
-    		[action.activity._id]: merge(oldActivity, action.activity)
-    	}
-
-    default:
-      return state;
-  }
-}
+export default userInterface;

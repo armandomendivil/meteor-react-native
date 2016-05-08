@@ -6,20 +6,13 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    //debugger // checkout this.props with debugger!
+    var results = Object.keys(this.props.activities);
     return (
-      <div>
-      {
-        Object.keys(this.props.activities).map((_id) => {
-          return (
-            <div>
-              <p>id: {_id}</p>
-              <p>name: {this.props.activities[_id].name}</p>
-            </div>
-          ); 
-        })
-      }
-      </div>
+      <ol>
+      {results.map((_id) => {
+        return <li key={_id}>name: {this.props.activities[_id].name}</li>
+      })}
+      </ol>
     );
   }
 }

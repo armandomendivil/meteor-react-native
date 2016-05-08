@@ -1,13 +1,11 @@
 import React from 'react';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { createDevTools } from 'redux-devtools';
 import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
+import rootReducer from './reducers/index';
 
-const rootReducer = combineReducers({
-  userInterface: Reducers.userInterface,
-  activities: Reducers.activities,
-});
+
 
 // Create and configure the Redux Dev tool component.
 // https://github.com/gaearon/redux-devtools
