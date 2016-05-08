@@ -47,10 +47,18 @@ The state.activities collection is stored as an object with _id keys, you can
 view the activities collection structure in the Redux Dev Tools sidebar.
 */
 Reducers.activities = function(state = {}, action) {
-  debugger
+
   switch(action.type) {
     case 'ACTIVITY_ADDED':
       return {...state, [action.activity._id]: action.activity};
+
+    case 'ACTIVITY_CHANGED':
+    	// Data has changed
+    	var oldActivity = state[action.activity._id]
+    	return {
+    		...state,
+    		[action.activity._id]: merge(oldActivity, action.activity)
+    	}
 
     default:
       return state;

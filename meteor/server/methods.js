@@ -12,6 +12,4 @@ Meteor.methods({
 		Activity.update({_id: activityId});
 		return Activity.findOne(activityId)
 	},
-
-	
 });
