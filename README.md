@@ -5,8 +5,10 @@ Installing and developing
 ===
 
 ```bash
-npm i
+cd meteor & npm i
+cd RN & npm i
 meteor
+react-native start
 ```
 
 License
