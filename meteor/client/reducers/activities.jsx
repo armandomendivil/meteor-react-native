@@ -34,6 +34,9 @@ function  activities(state = {}, action) {
     case 'ACTIVITY_ADDED':
       return {...state, [action.activity._id]: action.activity};
 
+    case 'ACTIVITY_DELETED':
+      return _.omit(state, action.activity._id);
+
     case 'ACTIVITY_CHANGED':
       // Data has changed
       var oldActivity = state[action.activity._id]

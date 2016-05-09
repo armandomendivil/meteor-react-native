@@ -26,6 +26,13 @@ Actions.selectActivity = function selectActivity(activity) {
 	}
 };
 
+Actions.activityDeleted = function activityDeleted(_id) {
+  return {
+    type: 'ACTIVITY_DELETED',
+    activity: {_id: _id}
+  };
+};
+
 // Log DDP messages
 Actions.logDDP = function logDDP(message) {
   return {
