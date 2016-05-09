@@ -1,4 +1,4 @@
-// Subcriptions class
+// Subscriptions to activities
 var subId = DDP.sub('activities');
 DDP.on('ready', function (message) {
   if (message.id === subId) {
