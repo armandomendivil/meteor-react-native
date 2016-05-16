@@ -5,6 +5,7 @@ There is another package called 'ddp' which is similar :
 https://www.npmjs.com/package/ddp
 */
 import DDP from 'ddp.js'
+import logDDP from './actions/logDDP';
 import Store from './store/configureStore';
 
 var location = window.location.href.replace(/^https?\:\/\//i, "");
@@ -22,5 +23,5 @@ var options = {
 this.DDP = new DDP(options);
 
 this.DDP.on('connected', function () {
-  Store.dispatch(Actions.logDDP({message:'connected'}));
+  Store.dispatch(logDDP({message:'connected'}));
 });
