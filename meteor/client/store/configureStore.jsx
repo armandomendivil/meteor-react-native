@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { createDevTools } from 'redux-devtools';
 import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
-import rootReducer from './reducers/index';
+import rootReducer from '../reducers/index';
 
 
 
@@ -25,4 +25,6 @@ const finalCreateStore = compose(
 )(createStore);
 
 
-Store = finalCreateStore(rootReducer);
+configureStore = finalCreateStore(rootReducer);
+
+export default configureStore;

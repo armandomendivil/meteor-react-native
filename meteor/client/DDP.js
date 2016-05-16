@@ -5,6 +5,7 @@ There is another package called 'ddp' which is similar :
 https://www.npmjs.com/package/ddp
 */
 import DDP from 'ddp.js'
+import Store from './store/configureStore';
 
 var location = window.location.href.replace(/^https?\:\/\//i, "");
 location = 'ws://' + location + 'websocket'

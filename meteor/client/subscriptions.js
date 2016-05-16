@@ -1,3 +1,4 @@
+import Store from './store/configureStore'
 // Subscriptions to activities
 var subId = DDP.sub('activities');
 DDP.on('ready', function (message) {
